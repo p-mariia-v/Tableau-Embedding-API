@@ -17,7 +17,7 @@ function changeYear(yearValue) {
     workbook.changeParameterValueAsync('Year Parameter', yearValue)
         .then(function() {
             console.log("Year changed to " + yearValue);
-        })
+        });
 }  
 function exportPDF() {
     if (viz) {
