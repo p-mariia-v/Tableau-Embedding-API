@@ -18,9 +18,23 @@
         background-color: white;
       }
 
-      button:hover {
-        background-color: #f0f0f0;
+      .btn-parameter {
+        background-color: #2e75b6;
+        color: white;
       }
+      .btn-parameter:hover {
+        background-color: #1f4e79;
+      }
+
+      .btn-export {
+        background-color: #548235;
+        color: white;
+      }
+      .btn-export:hover {
+        background-color: #375623;
+      }
+
+
 
       #vizContainer {
         margin-top: 30px; /* This creates the space you wanted */
@@ -36,10 +50,10 @@
   </head>
   <body>
     <h1> My first Tableau dashboard</h1>
-    <button onclick="changeYear('2019')">Show 2019</button>
-    <button onclick="changeYear('2020')">Show 2020</button>
-    <button onclick="exportPDF()">Export PDF</button>
-    <button onclick="resetViz()">Reset Dashboard</button>
+    <button class="btn-parameter" onclick="changeYear('2019')">Show 2019</button>
+    <button class="btn-parameter" onclick="changeYear('2020')">Show 2020</button>
+    <button class="btn-export" onclick="exportPDF()">Export PDF</button>
+    <button class="btn-export" onclick="resetViz()">Reset Dashboard</button>
     <div id="vizContainer" style="width: 800px; height: 600px; margin-top: 50px;"></div>
     <script src="my-page.js"></script>
   </body>
