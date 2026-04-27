@@ -8,27 +8,6 @@
     <button onclick="changeYear('2022')">Show 2022</button>
     <button onclick="changeYear('2023')">Show 2023</button>
     <div id="vizContainer" style="width: 800px; height: 600px;"></div>
-  var viz;
 
-  function initViz() {
-    var containerDiv = document.getElementById("vizContainer"),
-    url = "https://public.tableau.com/views/MARKETCOMPARISONOFLEADINGCARBRANDS/Overview";
-    var options = {
-        hideTabs: true,
-        onFirstInteractive: function () {
-            console.log("Run this code when the viz has finished loading.");
-        }
-    };
-    viz = new tableau.Viz(containerDiv, url, options);
-  }
-function changeYear(yearValue) {
-    var workbook = viz.getWorkbook();
-
-    workbook.changeParameterValueAsync('Year Parameter Name', yearValue)
-        .then(function() {
-            console.log("Year changed to " + yearValue);
-        });
-}
-window.onload = initViz;
   </body>
 </html>
