@@ -18,22 +18,13 @@ function changeYear(yearValue) {
         .then(function() {
             console.log("Year changed to " + yearValue);
         });
-}
 function exportPDF() {
-    viz.showExportPDFDialog();
+    if (viz) {
+        viz.showExportPDFDialog();
+    } else {
+        alert("The dashboard hasn't loaded yet!");
+    }
 }
-
-// Function to trigger Image export dialog
-function exportImage() {
-    viz.showExportImageDialog();
-}
-
-// Function to trigger the Crosstab (Excel-friendly) export
-function exportCrossTab() {
-    viz.showExportCrosstabDialog();
-}
-
-// A "Bonus" function: Returns the dashboard to its original state
 function resetViz() {
     viz.revertAllAsync();
 }
