@@ -14,7 +14,7 @@
 function changeYear(yearValue) {
     var workbook = viz.getWorkbook();
 
-    workbook.changeParameterValueAsync('Year Parameter Name', yearValue)
+    workbook.changeParameterValueAsync('Year Parameter', yearValue)
         .then(function() {
             console.log("Year changed to " + yearValue);
         });
