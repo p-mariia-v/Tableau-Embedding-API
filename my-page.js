@@ -1,4 +1,6 @@
-  var viz;
+var viz;
+const ALL_BRANDS = ["BMW", "Mercedes-Benz", "Audi", "Porsche", "VW"];
+let activeBrands = [...ALL_BRANDS]; 
 
   function initViz() {
     var containerDiv = document.getElementById("vizContainer"),
@@ -28,7 +30,7 @@ function exportPDF() {
 }
 function resetViz() {
     viz.revertAllAsync();
-    activeBrands = ["BMW", "Mercedes-Benz", "Audi", "Porsche", "VW"];
+    activeBrands = [...ALL_BRANDS];
     var buttons = document.querySelectorAll('.btn-brand');
         buttons.forEach(function(btn) {
            btn.classList.remove('inactive');
@@ -37,8 +39,6 @@ function resetViz() {
 
     console.log("Dashboard and buttons reset!");
 }
-
-let activeBrands = ["BMW", "Mercedes-Benz", "Audi", "Porsche", "VW"];
 
 function toggleBrand(buttonElement, brandName) {
     // 1. Update our tracking array
