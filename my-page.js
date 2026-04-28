@@ -54,7 +54,7 @@ function applyBrandFilter() {
     for (var i = 0; i < worksheets.length; i++) {
         // We tell Tableau: "Only show brands that are in my activeBrands list"
         worksheets[i].applyFilterAsync(
-            "Brand", 
+            "Maker / Brand", 
             activeBrands, 
             tableau.FilterUpdateType.REPLACE
         );
