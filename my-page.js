@@ -1,12 +1,9 @@
 var viz;
-const ALL_BRANDS = ["BMW", "Mercedes-Benz", "Audi", "Porsche", "VW"];
-
   function initViz() {
     var containerDiv = document.getElementById("vizContainer"),
     url = "https://public.tableau.com/views/MARKETCOMPARISONOFLEADINGCARBRANDS/Overview";
     var options = {
         hideTabs: true,
-       // "Year Parameter": "2020",
         onFirstInteractive: function () {
             console.log(""Viz loaded with default year 2020"");
         }
@@ -14,28 +11,6 @@ const ALL_BRANDS = ["BMW", "Mercedes-Benz", "Audi", "Porsche", "VW"];
     viz = new tableau.Viz(containerDiv, url, options);
   }
 
-/*function handleManualYear() {
-    const inputField = document.getElementById('yearInput');
-    const errorMsg = document.getElementById('error-msg');
-    const yearValue = inputField.value; 
-
-    if (yearValue >= 2000 && yearValue <= 2020 && yearValue !== "") {
-        errorMsg.style.display = 'none';
-        
-        var workbook = viz.getWorkbook();
-        workbook.changeParameterValueAsync('Year Parameter', Number(yearValue))
-            .then(function() {
-                console.log("Success! Year changed to: " + yearValue);
-            })
-            .catch(function(err) {
-                console.log("Retrying as String...");
-                workbook.changeParameterValueAsync('Year Parameter', yearValue.toString());
-            });
-            
-    } else {
-        errorMsg.style.display = 'block';
-    }
-}*/
 function changeYear(yearValue) {
     var workbook = viz.getWorkbook();
 
@@ -51,9 +26,11 @@ function exportPDF() {
         alert("The dashboard hasn't loaded yet!");
     }
 }
+
+
 function resetViz() {
     viz.revertAllAsync();
-    activeBrands = [...ALL_BRANDS];
+    activeBrands = ["BMW", "Mercedes-Benz", "Audi", "Porsche", "VW"];
     var buttons = document.querySelectorAll('.btn-brand');
         buttons.forEach(function(btn) {
            btn.classList.remove('inactive');
@@ -62,7 +39,9 @@ function resetViz() {
 
     console.log("Dashboard and buttons reset!");
 }
-let activeBrands = [...ALL_BRANDS]; 
+
+let  activeBrands = ["BMW", "Mercedes-Benz", "Audi", "Porsche", "VW"];
+
 function toggleBrand(buttonElement, brandName) {
     // 1. Update our tracking array
     if (activeBrands.includes(brandName)) {
