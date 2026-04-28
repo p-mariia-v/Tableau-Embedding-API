@@ -1,13 +1,12 @@
 var viz;
 const ALL_BRANDS = ["BMW", "Mercedes-Benz", "Audi", "Porsche", "VW"];
-let activeBrands = [...ALL_BRANDS]; 
 
   function initViz() {
     var containerDiv = document.getElementById("vizContainer"),
     url = "https://public.tableau.com/views/MARKETCOMPARISONOFLEADINGCARBRANDS/Overview";
     var options = {
         hideTabs: true,
-        "Year Parameter": "2020",
+       // "Year Parameter": "2020",
         onFirstInteractive: function () {
             console.log(""Viz loaded with default year 2020"");
         }
