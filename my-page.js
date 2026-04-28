@@ -55,6 +55,10 @@ function exportPDF() {
 
 function resetViz() {
     viz.revertAllAsync();
+    const yearInput = document.getElementById('yearInput');
+    if (yearInput) {
+        yearInput.value = "2020";
+    }
     activeBrands = ["BMW", "Mercedes-Benz", "Audi", "Porsche", "VW"];
     var buttons = document.querySelectorAll('.btn-brand');
         buttons.forEach(function(btn) {
