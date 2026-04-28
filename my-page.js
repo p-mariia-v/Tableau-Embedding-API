@@ -30,7 +30,7 @@ function resetViz() {
     viz.revertAllAsync();
 }
 
-let activeBrands = ["BMW", "Mercedes", "Audi", "Porsche", "Volkswagen"];
+let activeBrands = ["BMW", "Mercedes-Benz", "Audi", "Porsche", "VW"];
 
 function toggleBrand(buttonElement, brandName) {
     // 1. Update our tracking array
