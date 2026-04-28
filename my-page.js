@@ -7,8 +7,9 @@ let activeBrands = [...ALL_BRANDS];
     url = "https://public.tableau.com/views/MARKETCOMPARISONOFLEADINGCARBRANDS/Overview";
     var options = {
         hideTabs: true,
+        "Year Parameter": "2020",
         onFirstInteractive: function () {
-            console.log("Run this code when the viz has finished loading.");
+            console.log(""Viz loaded with default year 2020"");
         }
     };
     viz = new tableau.Viz(containerDiv, url, options);
