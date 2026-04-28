@@ -1,4 +1,5 @@
 var viz;
+let  activeBrands = ["BMW", "Mercedes-Benz", "Audi", "Porsche", "VW"];
   function initViz() {
     var containerDiv = document.getElementById("vizContainer"),
     url = "https://public.tableau.com/views/MARKETCOMPARISONOFLEADINGCARBRANDS/Overview";
@@ -40,7 +41,7 @@ function resetViz() {
     console.log("Dashboard and buttons reset!");
 }
 
-let  activeBrands = ["BMW", "Mercedes-Benz", "Audi", "Porsche", "VW"];
+
 
 function toggleBrand(buttonElement, brandName) {
     // 1. Update our tracking array
