@@ -5,7 +5,7 @@ var viz;
     var options = {
         hideTabs: true,
         onFirstInteractive: function () {
-            console.log(""Viz loaded with default year 2020"");
+            console.log("Viz loaded with default year 2020");
         }
     };
     viz = new tableau.Viz(containerDiv, url, options);
