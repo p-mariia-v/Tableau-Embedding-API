@@ -60,15 +60,6 @@
   </head>
   <body>
     <h1> My first Tableau dashboard</h1>
-    <div class="input-group">
-      <label for="yearInput">Enter Year:</label>
-      <input type="number" id="yearInput" value="2020" placeholder="e.g. 2015">
-      <button class="btn-filter" onclick="handleManualYear()">Apply Year</button>
-    
-      <p id="error-msg" style="color: red; display: none; font-size: 14px;">
-          Error: Please enter a year between 2000 and 2020.
-      </p>
-    </div>
     <button class="btn-parameter" onclick="changeYear('2019')">Show 2019</button>
     <button class="btn-parameter" onclick="changeYear('2018')">Show 2018</button>
     <button class="btn-export" onclick="exportPDF()">Export PDF</button>
