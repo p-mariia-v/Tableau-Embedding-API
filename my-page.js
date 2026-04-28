@@ -96,3 +96,22 @@ function applyBrandFilter() {
     }
 }
 window.onload = initViz;
+
+document.addEventListener("DOMContentLoaded", function() {
+    const yearInputField = document.getElementById('yearInput');
+
+    if (yearInputField) {
+        yearInputField.addEventListener("keypress", function(event) {
+            // Check if the key pressed was 'Enter'
+            if (event.key === "Enter") {
+                // Prevent the default behavior (like refreshing the page)
+                event.preventDefault();
+                
+                // Trigger the logic you already built!
+                handleYearInput();
+                
+                console.log("Enter key detected, applying year...");
+            }
+        });
+    }
+});
