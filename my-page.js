@@ -14,6 +14,29 @@ let activeBrands = [...ALL_BRANDS];
     };
     viz = new tableau.Viz(containerDiv, url, options);
   }
+
+function handleManualYear() {
+    const inputField = document.getElementById('yearInput');
+    const errorMsg = document.getElementById('error-msg');
+    const yearValue = inputField.value; 
+
+    if (yearValue >= 2000 && yearValue <= 2020 && yearValue !== "") {
+        errorMsg.style.display = 'none';
+        
+        var workbook = viz.getWorkbook();
+        workbook.changeParameterValueAsync('Year Parameter', Number(yearValue))
+            .then(function() {
+                console.log("Success! Year changed to: " + yearValue);
+            })
+            .catch(function(err) {
+                console.log("Retrying as String...");
+                workbook.changeParameterValueAsync('Year Parameter', yearValue.toString());
+            });
+            
+    } else {
+        errorMsg.style.display = 'block';
+    }
+}
 function changeYear(yearValue) {
     var workbook = viz.getWorkbook();
 
