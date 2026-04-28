@@ -5,56 +5,74 @@
     <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
     <style>
       body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f7f6;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers everything horizontally */
+        padding: 40px;
+      }
+      
+      .main-wrapper {
+          width: 100%;
+          max-width: 1000px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      h1 {
+          color: #333;
+          margin-bottom: 30px;
       }
 
       
-      button {
-        margin: 5px;
-        padding: 10px 15px;
-        cursor: pointer;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        background-color: white;
+     .controls-container {
+          background: white;
+          padding: 25px;
+          border-radius: 12px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px; /* Space between rows */
+          margin-bottom: 30px;
       }
-      .btn-parameter {
-        background-color: #2e75b6;
-        color: white;
+      
+      .control-group, .button-row {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
       }
-      .btn-parameter:hover {
-        background-color: #1f4e79;
+      
+      /* Styling the Input area */
+      .input-wrapper {
+          display: flex;
+          align-items: center;
+          background: #eee;
+          padding: 5px 10px;
+          border-radius: 6px;
+          margin-left: 15px;
       }
-      .btn-export {
-        background-color: #548235;
-        color: white;
+      
+      #yearInput {
+          width: 60px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          padding: 5px;
+          margin: 0 8px;
       }
-      .btn-export:hover {
-        background-color: #375623;
-      }
-    
-      .btn-brand.active {
-        background-color: #2e75b6;
-        color: white;
-        opacity: 1;
-      }
-
-      .btn-brand.inactive {
-        background-color: #e0e0e0;
-        color: #888;
-        text-decoration: line-through;
-        opacity: 0.6;
-      }
-
+      
+      /* Dashboard Container */
       #vizContainer {
-        margin-top: 30px; /* This creates the space you wanted */
-        border: 1px solid #eee;
-      }
-
-      .export-controls {
-        margin-top: 15px;
-        padding-top: 10px;
-        border-top: 1px dashed #ccc;
+          width: 1000px; /* Match your dashboard width */
+          height: 700px;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       }
     </style>
   </head>
