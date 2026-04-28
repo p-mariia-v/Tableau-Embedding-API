@@ -63,7 +63,7 @@ function resetViz() {
 
     console.log("Dashboard and buttons reset!");
 }
-
+let activeBrands = [...ALL_BRANDS]; 
 function toggleBrand(buttonElement, brandName) {
     // 1. Update our tracking array
     if (activeBrands.includes(brandName)) {
