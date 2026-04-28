@@ -20,16 +20,28 @@ function changeYear(yearValue) {
         });
 } 
 function handleYearInput() {
-    const input = document.getElementById('yearInput');
-    const errorMsg = document.getElementById('error-msg');
-    const val = input.value;
+    // 1. Get the element
+    const inputElement = document.getElementById('yearInput');
+    
+    // 2. Get the value and clean it (remove any accidental spaces)
+    const rawValue = inputElement.value;
+    const cleanValue = rawValue.toString().trim();
 
-    // Validation: Is it between 2000 and 2020?
-    if (val >= 2000 && val <= 2020 && val !== "") {
-        errorMsg.style.display = 'none';
-        changeYear(val); 
+    const errorMsg = document.getElementById('error-msg');
+
+    // 3. Validation Logic
+    if (cleanValue >= 2000 && cleanValue <= 2020 && cleanValue !== "") {
+        // Hide error if it was showing
+        if (errorMsg) errorMsg.style.display = 'none';
+        
+        console.log("Input valid. Calling changeYear with:", cleanValue);
+        
+        // 4. Call the function that we KNOW works
+        changeYear(cleanValue); 
     } else {
-        errorMsg.style.display = 'block';
+        // Show error
+        if (errorMsg) errorMsg.style.display = 'block';
+        console.log("Input invalid or out of range.");
     }
 }
 function exportPDF() {
