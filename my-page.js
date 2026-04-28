@@ -14,12 +14,24 @@ let  activeBrands = ["BMW", "Mercedes-Benz", "Audi", "Porsche", "VW"];
 
 function changeYear(yearValue) {
     var workbook = viz.getWorkbook();
-
     workbook.changeParameterValueAsync('Year Parameter', yearValue)
         .then(function() {
             console.log("Year changed to " + yearValue);
         });
-}  
+} 
+function handleYearInput() {
+    const input = document.getElementById('yearInput');
+    const errorMsg = document.getElementById('error-msg');
+    const val = input.value;
+
+    // Validation: Is it between 2000 and 2020?
+    if (val >= 2000 && val <= 2020 && val !== "") {
+        errorMsg.style.display = 'none';
+        changeYear(val); 
+    } else {
+        errorMsg.style.display = 'block';
+    }
+}
 function exportPDF() {
     if (viz) {
         viz.showExportPDFDialog();
