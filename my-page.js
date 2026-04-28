@@ -28,6 +28,14 @@ function exportPDF() {
 }
 function resetViz() {
     viz.revertAllAsync();
+    activeBrands = ["BMW", "Mercedes-Benz", "Audi", "Porsche", "VW"];
+    var buttons = document.querySelectorAll('.btn-brand');
+        buttons.forEach(function(btn) {
+           btn.classList.remove('inactive');
+           btn.classList.add('active');
+    });
+
+    console.log("Dashboard and buttons reset!");
 }
 
 let activeBrands = ["BMW", "Mercedes-Benz", "Audi", "Porsche", "VW"];
