@@ -95,7 +95,7 @@ function applyBrandFilter() {
         );
     }
 }
-window.onload = initViz;
+
 
 document.addEventListener("DOMContentLoaded", function() {
     const yearInputField = document.getElementById('yearInput');
@@ -115,3 +115,4 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+window.onload = initViz;
