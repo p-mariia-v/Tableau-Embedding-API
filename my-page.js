@@ -15,7 +15,7 @@ let activeBrands = [...ALL_BRANDS];
     viz = new tableau.Viz(containerDiv, url, options);
   }
 
-function handleManualYear() {
+/*function handleManualYear() {
     const inputField = document.getElementById('yearInput');
     const errorMsg = document.getElementById('error-msg');
     const yearValue = inputField.value; 
@@ -36,7 +36,7 @@ function handleManualYear() {
     } else {
         errorMsg.style.display = 'block';
     }
-}
+}*/
 function changeYear(yearValue) {
     var workbook = viz.getWorkbook();
 
