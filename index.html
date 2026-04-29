@@ -26,14 +26,20 @@
       button:hover {
         background-color: #f0f0f0;
       }
-      .btn-brand {
+     .btn-brand.active {
           background-color: #2e75b6;
           color: white;
-      }
-      .btn-brand:hover {
-          background-color: #1f4e79;
+          opacity: 1;
       }
       
+      /* Hidden state (Excluded) */
+      .btn-brand.inactive {
+          background-color: #e0e0e0;
+          color: #888;
+          text-decoration: line-through;
+          opacity: 0.6;
+      }
+          
       /* Green style for Exports */
       .btn-export {
           background-color: #548235;
