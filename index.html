@@ -88,14 +88,16 @@
                     Error: Please enter a year between 2000 and 2020.
                 </p>
             </div>
-            
+            <div flex-direction: column>  
+            <p>Click to Hide/Show Brands:</p>
             <div class="brand-filters" id="brand-filters">
-                <p>Click to Hide/Show Brands:</p>
+                
                 <button class="btn-brand active" onclick="toggleBrand(this, 'BMW')">BMW</button>
                 <button class="btn-brand active" onclick="toggleBrand(this, 'Mercedes-Benz')">Mercedes</button>
                 <button class="btn-brand active" onclick="toggleBrand(this, 'Audi')">Audi</button>
                 <button class="btn-brand active" onclick="toggleBrand(this, 'Porsche')">Porsche</button>
                 <button class="btn-brand active" onclick="toggleBrand(this, 'VW')">Volkswagen</button>
+            </div>
             </div>
 
             <button class="btn-export" onclick="exportPDF()">Export PDF</button>
