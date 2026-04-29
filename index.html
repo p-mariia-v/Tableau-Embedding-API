@@ -49,7 +49,20 @@
       .btn-export:hover {
           background-color: #004449;
       }
-    
+      .brand-filters-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center; /* Centers the row and the text together */
+          gap: 8px;           /* Space between buttons and text */
+      }
+      
+      .filter-instruction {
+          color: #999;        /* Light gray color */
+          font-size: 12px;    /* Smaller font size */
+          margin: 0;          /* Remove default paragraph spacing */
+          font-style: italic; /* Optional: makes it look more like a caption */
+      }
+          
             
       .main-wrapper {
           width: 100%;
@@ -124,16 +137,15 @@
                     Error: Please enter a year between 2000 and 2020.
                 </p>
             </div>
-            <div flex-direction: column>  
-            <p>Click to Hide/Show Brands:</p>
-            <div class="brand-filters" id="brand-filters">
-                
-                <button class="btn-brand active" onclick="toggleBrand(this, 'BMW')">BMW</button>
-                <button class="btn-brand active" onclick="toggleBrand(this, 'Mercedes-Benz')">Mercedes</button>
-                <button class="btn-brand active" onclick="toggleBrand(this, 'Audi')">Audi</button>
-                <button class="btn-brand active" onclick="toggleBrand(this, 'Porsche')">Porsche</button>
-                <button class="btn-brand active" onclick="toggleBrand(this, 'VW')">Volkswagen</button>
-            </div>
+            <div class="brand-filters-container">  
+                <div class="brand-filters" id="brand-filters">
+                    <button class="btn-brand active" onclick="toggleBrand(this, 'BMW')">BMW</button>
+                    <button class="btn-brand active" onclick="toggleBrand(this, 'Mercedes-Benz')">Mercedes</button>
+                    <button class="btn-brand active" onclick="toggleBrand(this, 'Audi')">Audi</button>
+                    <button class="btn-brand active" onclick="toggleBrand(this, 'Porsche')">Porsche</button>
+                    <button class="btn-brand active" onclick="toggleBrand(this, 'VW')">Volkswagen</button>
+                </div>
+                <p class="filter-instruction">Click to Hide/Show Brands</p>
             </div>
 
             <button class="btn-export" onclick="exportPDF()">Export PDF</button>
